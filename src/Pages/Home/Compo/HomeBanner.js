@@ -3,7 +3,7 @@ import React from "react";
 const HomeBanner = () => {
   return (
     <section>
-      <div className="grid grid-cols-2 md:px-14 p-3 items-center py-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:px-14 p-3 items-center py-10">
         <div>
           <span className="text-red-500 uppercase text-sm">Secret Reveals</span>
           <h1 className="text-3xl md:text-5xl font-bold my-3 font-mono">

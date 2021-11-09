@@ -1,0 +1,19 @@
+.categories-item .categories-box {
+  overflow: hidden;
+}
+
+.categories-item .categories-box img {
+  object-fit: cover;
+  transition: 0.4s all ease-in-out;
+}
+
+.categories-item .categories-box:hover img {
+  transform: scale(1.2);
+}
+
+.categories-content {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
