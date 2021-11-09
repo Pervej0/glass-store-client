@@ -51,7 +51,7 @@ const NavigationBar = () => {
               <span>Home</span>
             </NavLink>
             <NavLink
-              to="/about"
+              to="/shop"
               activeClassName="active"
               className="lg:inline-flex nav-link lg:w-auto w-full mx-3 py-2 rounded text-black items-center justify-center hover:text-red-600 leading-4	 font-semibold"
             >

@@ -6,6 +6,7 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import AuthProvider from "./Context/AuthProvider";
 import Footer from "./Pages/Shared/Footer/Footer";
+import Shop from "./Pages/Shop/Shop";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home}></Route>
             <Route path="/home" component={Home}></Route>
+            <Route path="/shop" component={Shop}></Route>
             <Route path="/login" component={Login}></Route>
             <Route path="/register" component={Register}></Route>
           </Switch>
