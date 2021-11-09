@@ -1,0 +1,9 @@
+footer li {
+  transition: 0.4s all ease;
+  cursor: pointer;
+}
+
+footer ul li:hover {
+  padding-left: 5px;
+  color: rgb(231, 26, 26);
+}

@@ -5,6 +5,7 @@ import NavigationBar from "./Pages/Shared/NavigationBar/NavigationBar";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import AuthProvider from "./Context/AuthProvider";
+import Footer from "./Pages/Shared/Footer/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/login" component={Login}></Route>
             <Route path="/register" component={Register}></Route>
           </Switch>
+          <Footer />
         </Router>
       </AuthProvider>
     </div>
