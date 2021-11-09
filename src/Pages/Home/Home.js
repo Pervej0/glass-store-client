@@ -1,9 +1,10 @@
 import React from "react";
+import HomeBanner from "./Compo/HomeBanner";
 
 const Home = () => {
   return (
     <div>
-      <h1>Weelocme to home</h1>
+      <HomeBanner />
     </div>
   );
 };
