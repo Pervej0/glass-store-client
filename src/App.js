@@ -8,6 +8,7 @@ import AuthProvider from "./Context/AuthProvider";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Shop from "./Pages/Shop/Shop";
 import PlaceOrder from "./Pages/Shop/Compo/Products/Compo/PlaceOrder";
+import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -18,8 +19,12 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home}></Route>
             <Route path="/home" component={Home}></Route>
-            <Route path="/shop" component={Shop}></Route>
-            <Route path="/product/:id" component={PlaceOrder}></Route>
+            <PrivateRoute path="/shop">
+              <Shop />
+            </PrivateRoute>
+            <PrivateRoute path="/product/:id">
+              <PlaceOrder />
+            </PrivateRoute>
             <Route path="/login" component={Login}></Route>
             <Route path="/register" component={Register}></Route>
           </Switch>

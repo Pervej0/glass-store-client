@@ -28,7 +28,7 @@ const useFirebase = () => {
         setUser(userInfo);
         setIsloading(false);
         saveToUser(userInfo.displayName, userInfo.email, "PUT");
-        // history.push(from);
+        history.push(from);
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -74,7 +74,7 @@ const useFirebase = () => {
         const userInfo = result.user;
         setUser(userInfo);
         setIsloading(false);
-        // history.push(from);
+        history.push(from);
       })
       .catch((error) => {
         const errorMessage = error.message;

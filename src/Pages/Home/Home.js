@@ -7,12 +7,12 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <HomeBanner />
       <Categories />
       <HomeProducts />
       <Reviews />
-    </div>
+    </>
   );
 };
 
