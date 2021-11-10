@@ -84,6 +84,7 @@ const Login = () => {
             </div>
             <div className="text-center">
               <button
+                type="button"
                 onClick={signInGoogle}
                 className="px-4 py-2 border flex items-center justify-center mx-auto my-6"
               >
@@ -103,11 +104,11 @@ const Login = () => {
             </p>
           </div>
           <h4 className="mt-10">
-            <button className="inline-block py-2 px-5 transition duration-500 ease-in-out bg-gray-700 rounded hover:bg-black border hover:border-white text-white">
-              <Link to="/register" className="font-semibold">
+            <Link to="/register" className="font-semibold">
+              <button className="inline-block py-2 px-5 transition duration-500 ease-in-out bg-gray-700 rounded hover:bg-black border hover:border-white text-white">
                 Create an account
-              </Link>
-            </button>
+              </button>
+            </Link>
           </h4>
         </div>
       </div>

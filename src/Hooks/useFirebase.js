@@ -27,6 +27,7 @@ const useFirebase = () => {
         const userInfo = result.user;
         setUser(userInfo);
         setIsloading(false);
+        saveToUser(userInfo.displayName, userInfo.email, "PUT");
         // history.push(from);
       })
       .catch((error) => {
@@ -47,13 +48,15 @@ const useFirebase = () => {
         updateProfile(auth.currentUser, {
           displayName: name,
         })
-          .then(() => {})
+          .then(() => {
+            setUser(userInfo);
+            setIsloading(false);
+            saveToUser(name, email, "POST");
+          })
           .catch((error) => {
             const errorMessage = error.message;
             setError(errorMessage);
           });
-        setUser(userInfo);
-        setIsloading(false);
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -106,6 +109,20 @@ const useFirebase = () => {
         const errorMessage = error.message;
         setError(errorMessage);
       });
+  };
+
+  // save user to db
+  const saveToUser = (displayName, email, method) => {
+    const user = { displayName, email };
+
+    fetch("http://localhost:5000/user", {
+      method: method,
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+    console.log(user);
   };
 
   return {
