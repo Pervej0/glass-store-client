@@ -79,9 +79,10 @@ const NavigationBar = () => {
                     alt=""
                   />
                 )}
-                <ul className="dropdown" id={isClick ? "show" : "hide"}>
-                  <li className="text-gray-800 font-semibold px-2 bg-yellow-400">
-                    <FontAwesomeIcon icon={faUser} size="sm" />
+                <ul className="dropdown border" id={isClick ? "show" : "hide"}>
+                  <li className="text-white font-semibold px-2 bg-black">
+                    <FontAwesomeIcon icon={faUser} size="sm" /> &nbsp;
+                    <span>{user.displayName}</span>
                   </li>
                   <li>
                     <Link

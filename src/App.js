@@ -7,6 +7,7 @@ import Register from "./Pages/Register/Register";
 import AuthProvider from "./Context/AuthProvider";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Shop from "./Pages/Shop/Shop";
+import PlaceOrder from "./Pages/Shop/Compo/Products/Compo/PlaceOrder";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route exact path="/" component={Home}></Route>
             <Route path="/home" component={Home}></Route>
             <Route path="/shop" component={Shop}></Route>
+            <Route path="/product/:id" component={PlaceOrder}></Route>
             <Route path="/login" component={Login}></Route>
             <Route path="/register" component={Register}></Route>
           </Switch>
