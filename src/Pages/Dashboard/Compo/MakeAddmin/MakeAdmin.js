@@ -6,7 +6,7 @@ const MakeAdmin = () => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const onSubmit = (data) => {
-    fetch(`http://localhost:5000/admin/${data.email}`, {
+    fetch(`https://guarded-oasis-87785.herokuapp.com/admin/${data.email}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
     })

@@ -9,7 +9,7 @@ const MyOrders = () => {
   const { user } = useAuth();
   console.log(user);
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${user?.email}`)
+    fetch(`https://guarded-oasis-87785.herokuapp.com/orders/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data);
@@ -20,7 +20,7 @@ const MyOrders = () => {
   const handleRemove = (id) => {
     const warning = window.confirm("Are you sure want to delete?");
     if (warning) {
-      fetch(`http://localhost:5000/orders/${id}`, {
+      fetch(`https://guarded-oasis-87785.herokuapp.com/orders/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

@@ -20,7 +20,7 @@ const OrderReview = () => {
     console.log(data);
     if (!isSuccess) {
       if (isAllCollect) {
-        fetch("http://localhost:5000/reviews", {
+        fetch("https://guarded-oasis-87785.herokuapp.com/reviews", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(data),

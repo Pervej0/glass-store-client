@@ -115,7 +115,7 @@ const useFirebase = () => {
   const saveToUser = (displayName, email, method) => {
     const user = { displayName, email };
     console.log(user);
-    fetch("http://localhost:5000/user", {
+    fetch("https://guarded-oasis-87785.herokuapp.com/user", {
       method: method,
       headers: { "content-type": "application/json" },
       body: JSON.stringify(user),
@@ -127,7 +127,7 @@ const useFirebase = () => {
 
   // check user admin or not
   useEffect(() => {
-    fetch(`http://localhost:5000/admin/${user?.email}`)
+    fetch(`https://guarded-oasis-87785.herokuapp.com/admin/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         if (data) {

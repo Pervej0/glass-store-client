@@ -5,7 +5,7 @@ const useProducts = () => {
   const [isLoaded, setIsLoaded] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://guarded-oasis-87785.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

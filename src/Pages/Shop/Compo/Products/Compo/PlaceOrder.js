@@ -10,7 +10,7 @@ const PlaceOrder = () => {
 
   // load specific product
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://guarded-oasis-87785.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);

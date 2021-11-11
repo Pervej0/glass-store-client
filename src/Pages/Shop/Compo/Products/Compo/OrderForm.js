@@ -14,7 +14,7 @@ const OrderForm = ({ product }) => {
     data.status = "pending";
     data.productTitle = product.name;
     if (!isSuccess) {
-      fetch("http://localhost:5000/orders", {
+      fetch("https://guarded-oasis-87785.herokuapp.com/orders", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(data),
