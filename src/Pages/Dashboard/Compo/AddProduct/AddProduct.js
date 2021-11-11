@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const AddProduct = () => {
-  const { register, handleSubmit, watch } = useForm();
+  const { register, handleSubmit, watch, reset } = useForm();
+  const [isSuccess, setIsSuccess] = useState(false);
+
   const onSubmit = (data) => {
     console.log(data);
     fetch("http://localhost:5000/products", {
@@ -11,12 +13,30 @@ const AddProduct = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((result) => console.log(result));
+      .then((result) => {
+        if (result.acknowledged) {
+          setIsSuccess(true);
+          reset();
+        }
+      });
+
+    setTimeout(() => {
+      setIsSuccess(false);
+    }, 6000);
   };
 
   console.log(watch("example"));
   return (
     <section>
+      {isSuccess && (
+        <div
+          className="bg-gren-100 mb-2 border border-green-400 text-green-700 px-4 py-3 rounded relative"
+          role="alert"
+        >
+          <strong className="font-bold">Awesome!</strong>
+          <span className="block sm:inline"> We received your order 👍</span>
+        </div>
+      )}
       <h6 className="text-2xl text-black font-bold mb-4 uppercase">
         Add a new product
       </h6>

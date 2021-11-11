@@ -17,8 +17,9 @@ const useFirebase = () => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState("");
   const [isLoading, setIsloading] = useState(true);
-  // sign in with google provider
+  const [isAdmin, setIsAdmin] = useState(false);
 
+  // sign in with google provider
   const signInGoogle = (from, history) => {
     setIsloading(true);
     const provier = new GoogleAuthProvider();
@@ -98,7 +99,6 @@ const useFirebase = () => {
   }, []);
 
   // logout-
-
   const logOut = () => {
     setIsloading(true);
     signOut(auth)
@@ -114,7 +114,7 @@ const useFirebase = () => {
   // save user to db
   const saveToUser = (displayName, email, method) => {
     const user = { displayName, email };
-
+    console.log(user);
     fetch("http://localhost:5000/user", {
       method: method,
       headers: { "content-type": "application/json" },
@@ -122,11 +122,23 @@ const useFirebase = () => {
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
-    console.log(user);
+    // console.log(user);
   };
+
+  // check user admin or not
+  useEffect(() => {
+    fetch(`http://localhost:5000/admin/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          setIsAdmin(true);
+        }
+      });
+  }, [user?.email]);
 
   return {
     isLoading,
+    isAdmin,
     user,
     error,
     logOut,

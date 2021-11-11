@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-import { useHistory } from "react-router";
+import { useHistory, useLocation } from "react-router";
 import NavigationBar from "../Shared/NavigationBar/NavigationBar";
 
 const Register = () => {
@@ -16,6 +16,8 @@ const Register = () => {
   });
   const { user, manuallySignUp, signInGoogle } = useAuth();
   const history = useHistory();
+  const location = useLocation();
+  let { from } = location.state || { from: { pathname: "/" } };
 
   const handleUserInput = (e) => {
     const { name, value } = e.target;
@@ -50,7 +52,7 @@ const Register = () => {
 
     manuallySignUp(userInfo?.email, userInfo?.confirmPassword, userInfo?.name);
     setUserError("");
-    history.push("/");
+    history.push(from);
   };
 
   return (
@@ -129,7 +131,7 @@ const Register = () => {
             </div>
             <div className="text-center">
               <button
-                onClick={signInGoogle}
+                onClick={() => signInGoogle(from, history)}
                 className="px-4 py-2 border flex items-center justify-center mx-auto my-6"
               >
                 <FontAwesomeIcon icon={faGoogle} size="2x" />

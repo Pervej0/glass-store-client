@@ -13,7 +13,6 @@ const OrderForm = ({ product }) => {
     data.price = product.price;
     data.status = "pending";
     data.productTitle = product.name;
-    console.log(data);
     if (!isSuccess) {
       fetch("http://localhost:5000/orders", {
         method: "POST",
@@ -27,6 +26,9 @@ const OrderForm = ({ product }) => {
             reset();
           }
         });
+      setTimeout(() => {
+        setIsSuccess(false);
+      }, 8000);
     } else {
       alert("user already added");
     }
