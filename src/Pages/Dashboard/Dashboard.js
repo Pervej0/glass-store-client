@@ -8,6 +8,7 @@ import {
   Link,
   useRouteMatch,
 } from "react-router-dom";
+import AddProduct from "./Compo/AddProduct/AddProduct";
 import Checkout from "./Compo/Checkout/Checkout";
 import DashboardNav from "./Compo/DashboardNav";
 import ManageOrders from "./Compo/ManageOrders/ManageOrders";
@@ -20,11 +21,11 @@ const Dashboard = () => {
   return (
     <section>
       <DashboardNav url={url} />
-      <div className="order-container border-b">
+      <div className="order-container border-b border-t">
         <div className="bg-gray-100 font-sans leading-normal tracking-normal">
           <div className="flex md:flex-row-reverse flex-wrap">
             <div className="w-full md:w-4/5 bg-gray-100">
-              <div className="container bg-gray-100 py-24 px-6 mx-auto">
+              <div className="container bg-gray-100 py-14 px-6 mx-auto">
                 <Switch>
                   <Route exact path={path} component={MyOrders} />
                   <Route path={`${path}/orderReview`} component={OrderReview} />
@@ -33,6 +34,7 @@ const Dashboard = () => {
                     path={`${path}/manageOrders`}
                     component={ManageOrders}
                   />
+                  <Route path={`${path}/addProduct`} component={AddProduct} />
                 </Switch>
               </div>
             </div>
@@ -70,6 +72,14 @@ const Dashboard = () => {
                       to={`${url}/manageOrders`}
                     >
                       Manage Orders
+                    </Link>
+                  </li>
+                  <li className="mr-3 flex-1">
+                    <Link
+                      className="block py-1 md:py-3 pl-1 align-middle text-white no-underline  border-b-2 border-gray-800 md:border-gray-900"
+                      to={`${url}/addProduct`}
+                    >
+                      Add Product
                     </Link>
                   </li>
                   <li className="flex-1 mt-24">

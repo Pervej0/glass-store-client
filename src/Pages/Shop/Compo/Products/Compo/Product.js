@@ -8,13 +8,13 @@ const Product = ({ product }) => {
   return (
     <div className="border">
       <div>
-        <img src={img} alt="" />
+        <img className="w-full" src={img} alt="" />
       </div>
       <div className="px-3 py-4">
         <h1 className="text-xl font-semibold mb-2 text-black font-mono">
           {name}
         </h1>
-        <p className="font-arial text-sm">{description}</p>
+        <p className="font-arial text-sm">{description.slice(0, 70)}..</p>
         <h5 className="text-xl font-semibold my-2 font-mono">
           $<span className="text-lg">{price}</span>
         </h5>

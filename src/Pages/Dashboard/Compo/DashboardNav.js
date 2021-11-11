@@ -1,4 +1,8 @@
-import { faBars, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faHome,
+  faSignOutAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -67,7 +71,7 @@ const DashboardNav = ({ url }) => {
                 title="Go to Home"
                 className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
               >
-                <FontAwesomeIcon icon={faSignOutAlt} size="2x" />
+                <FontAwesomeIcon icon={faHome} size="2x" />
               </Link>
             </li>
           </ul>
