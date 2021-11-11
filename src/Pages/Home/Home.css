@@ -40,9 +40,19 @@
 }
 
 .slick-list {
-  margin: 0 -10px !important;
+  margin: 0 -20px !important;
 }
 
 .slick-slide > div {
-  padding: 0 10px !important;
+  padding: 0 20px !important;
+}
+
+@media (max-width: 1024px) {
+  .slick-list {
+    margin: 0 -10px !important;
+  }
+
+  .slick-slide > div {
+    padding: 0 10px !important;
+  }
 }

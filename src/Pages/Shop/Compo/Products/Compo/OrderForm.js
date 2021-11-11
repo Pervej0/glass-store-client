@@ -11,6 +11,8 @@ const OrderForm = ({ product }) => {
   const onSubmit = (data) => {
     data.img = product.img;
     data.price = product.price;
+    data.status = "pending";
+    data.productTitle = product.name;
     console.log(data);
     if (!isSuccess) {
       fetch("http://localhost:5000/orders", {
@@ -29,7 +31,6 @@ const OrderForm = ({ product }) => {
       alert("user already added");
     }
   };
-  console.log(user);
   console.log(watch("example"));
   return (
     <div>

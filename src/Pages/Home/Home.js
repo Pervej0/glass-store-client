@@ -1,4 +1,5 @@
 import React from "react";
+import NavigationBar from "../Shared/NavigationBar/NavigationBar";
 import Categories from "./Compo/Categories";
 import HomeBanner from "./Compo/HomeBanner";
 import HomeProducts from "./Compo/HomeProducts";
@@ -8,6 +9,7 @@ import "./Home.css";
 const Home = () => {
   return (
     <>
+      <NavigationBar />
       <HomeBanner />
       <Categories />
       <HomeProducts />

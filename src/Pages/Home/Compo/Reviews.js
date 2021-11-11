@@ -1,15 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
+import SingleReview from "./SingleReview/SingleReview";
 
 let settings = {
   dots: false,
   infinite: true,
+  autoplay: true,
+  autoplaySpeed: 1500,
   speed: 500,
-  slidesToShow: 4,
+  slidesToShow: 3,
   slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
 const Reviews = () => {
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/reviews")
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, []);
   return (
     <section className="md:px-14 p-3 review my-14">
       <div className="text-center mb-20">
@@ -19,108 +55,9 @@ const Reviews = () => {
         <hr className="w-1/4 mx-auto border-black" />
       </div>
       <Slider {...settings}>
-        <div className="review-item">
-          <div>
-            <img
-              src="https://i.ibb.co/0JVSn3y/photo-1497551060073-4c5ab6435f12-ixid-Mnwx-Mj-A3f-DB8-MHxz-ZWFy-Y2h8-NXx8b-WFu-JTIw-Z2xhc3-Nlc3xlbnw.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <h4>Jhon Dow</h4>
-            <p>
-              Send Me Flowers Prom dress for a family lunch. First one since
-              July. Such a great day seeing my parents, siblings, nephew and
-              niece.
-            </p>
-            <small>General Manager</small>
-          </div>
-        </div>
-        <div className="review-item">
-          <div>
-            <img
-              src="https://i.ibb.co/0JVSn3y/photo-1497551060073-4c5ab6435f12-ixid-Mnwx-Mj-A3f-DB8-MHxz-ZWFy-Y2h8-NXx8b-WFu-JTIw-Z2xhc3-Nlc3xlbnw.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <h4>Jhon Dow</h4>
-            <p>
-              Send Me Flowers Prom dress for a family lunch. First one since
-              July. Such a great day seeing my parents, siblings, nephew and
-              niece.
-            </p>
-            <small>General Manager</small>
-          </div>
-        </div>
-        <div className="review-item">
-          <div>
-            <img
-              src="https://i.ibb.co/0JVSn3y/photo-1497551060073-4c5ab6435f12-ixid-Mnwx-Mj-A3f-DB8-MHxz-ZWFy-Y2h8-NXx8b-WFu-JTIw-Z2xhc3-Nlc3xlbnw.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <h4>Jhon Dow</h4>
-            <p>
-              Send Me Flowers Prom dress for a family lunch. First one since
-              July. Such a great day seeing my parents, siblings, nephew and
-              niece.
-            </p>
-            <small>General Manager</small>
-          </div>
-        </div>
-        <div className="review-item">
-          <div>
-            <img
-              src="https://i.ibb.co/0JVSn3y/photo-1497551060073-4c5ab6435f12-ixid-Mnwx-Mj-A3f-DB8-MHxz-ZWFy-Y2h8-NXx8b-WFu-JTIw-Z2xhc3-Nlc3xlbnw.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <h4>Jhon Dow</h4>
-            <p>
-              Send Me Flowers Prom dress for a family lunch. First one since
-              July. Such a great day seeing my parents, siblings, nephew and
-              niece.
-            </p>
-            <small>General Manager</small>
-          </div>
-        </div>
-        <div className="review-item">
-          <div>
-            <img
-              src="https://i.ibb.co/0JVSn3y/photo-1497551060073-4c5ab6435f12-ixid-Mnwx-Mj-A3f-DB8-MHxz-ZWFy-Y2h8-NXx8b-WFu-JTIw-Z2xhc3-Nlc3xlbnw.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <h4>Jhon Dow</h4>
-            <p>
-              Send Me Flowers Prom dress for a family lunch. First one since
-              July. Such a great day seeing my parents, siblings, nephew and
-              niece.
-            </p>
-            <small>General Manager</small>
-          </div>
-        </div>
-        <div className="review-item">
-          <div>
-            <img
-              src="https://i.ibb.co/0JVSn3y/photo-1497551060073-4c5ab6435f12-ixid-Mnwx-Mj-A3f-DB8-MHxz-ZWFy-Y2h8-NXx8b-WFu-JTIw-Z2xhc3-Nlc3xlbnw.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <h4>Jhon Dow</h4>
-            <p>
-              Send Me Flowers Prom dress for a family lunch. First one since
-              July. Such a great day seeing my parents, siblings, nephew and
-              niece.
-            </p>
-            <small>General Manager</small>
-          </div>
-        </div>
+        {reviews.map((item) => (
+          <SingleReview key={item._id} review={item} />
+        ))}
       </Slider>
     </section>
   );

@@ -86,7 +86,7 @@ const NavigationBar = () => {
                   </li>
                   <li>
                     <Link
-                      to="/myOrders"
+                      to="/dashboard"
                       className="text-gray-800 font-semibold px-2"
                     >
                       Dashboard
