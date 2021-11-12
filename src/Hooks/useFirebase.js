@@ -127,13 +127,12 @@ const useFirebase = () => {
 
   // check user admin or not
   useEffect(() => {
-    if (user) {
-      fetch(`https://guarded-oasis-87785.herokuapp.com/admin/${user?.email}`)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-        });
-    }
+    fetch(`https://guarded-oasis-87785.herokuapp.com/admin/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setIsAdmin(data.admin);
+      });
   }, [user]);
 
   return {

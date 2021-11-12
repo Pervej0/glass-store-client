@@ -21,6 +21,7 @@
 .home-banner {
   background: url(https://i.ibb.co/SV2Qcbs/main-banner-bg1.jpg) no-repeat;
   background-size: cover;
+  background-position: center;
   min-height: 90vh;
   display: flex;
   align-items: center;

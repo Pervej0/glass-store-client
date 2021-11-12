@@ -2,17 +2,25 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const MakeAdmin = () => {
-  const { register, handleSubmit, watch } = useForm();
+  const { register, handleSubmit, watch, reset } = useForm();
   const [isSuccess, setIsSuccess] = useState(false);
 
   const onSubmit = (data) => {
+    console.log(data);
     fetch(`https://guarded-oasis-87785.herokuapp.com/admin/${data.email}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
     })
       .then((res) => res.json())
-      .then((result) => console.log(result));
-    console.log(data);
+      .then((result) => {
+        console.log(result);
+        if (result.acknowledged && result.modifiedCount) {
+          setIsSuccess(true);
+          reset();
+        } else {
+          alert("this email isn't listed.");
+        }
+      });
   };
 
   console.log(watch("example"));
@@ -23,8 +31,11 @@ const MakeAdmin = () => {
           className="bg-gren-100 mb-2 border border-green-400 text-green-700 px-4 py-3 rounded relative"
           role="alert"
         >
-          <strong className="font-bold">Awesome!</strong>
-          <span className="block sm:inline"> We received your order 👍</span>
+          <strong className="font-bold">Well done!</strong>
+          <span className="block sm:inline">
+            {" "}
+            Successfully admin created 👍
+          </span>
         </div>
       )}
       <form onSubmit={handleSubmit(onSubmit)}>
