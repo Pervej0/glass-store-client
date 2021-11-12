@@ -14,12 +14,6 @@ import dashboardImg from "../../../images/dashboard/dashboard.png";
 
 const DashboardBanner = () => {
   const [products] = useProducts();
-  /*  const loadData = (route) => {
-    useEffect(`https://guarded-oasis-87785.herokuapp.com/products`)
-      .then((res) => res.json())
-      .then((data) => console.log(object));
-  }; */
-  console.log(products);
   return (
     <section className="md:px-14 p-3">
       <h1 className="md:text-4xl text-2xl mb-8 uppercase text-black text-center font-semibold mb-4">

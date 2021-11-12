@@ -10,7 +10,7 @@ const ManageProducts = () => {
     console.log(id);
     const warning = window.confirm("Are you sure want to delete?");
     if (warning) {
-      fetch(`http://localhost:5000/products/${id}`, {
+      fetch(`https://guarded-oasis-87785.herokuapp.com/products/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -34,10 +34,10 @@ const ManageProducts = () => {
         {isLoaded ? (
           <Spinner />
         ) : (
-          <div class="flex flex-col">
-            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-              <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+          <div className="flex flex-col">
+            <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                   <table className="w-full">
                     <thead>
                       <tr className="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">

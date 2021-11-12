@@ -22,7 +22,7 @@
   background: url(https://i.ibb.co/SV2Qcbs/main-banner-bg1.jpg) no-repeat;
   background-size: cover;
   background-position: center;
-  width: 100%;
+  max-width: 100%;
   min-height: 90vh;
   display: flex;
   align-items: center;

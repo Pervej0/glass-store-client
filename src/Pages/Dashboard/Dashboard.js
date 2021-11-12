@@ -28,6 +28,7 @@ import ManageOrders from "./Compo/ManageOrders/ManageOrders";
 import ManageProducts from "./Compo/ManageProducts/ManageProducts";
 import MyOrders from "./Compo/MyOrders/MyOrders";
 import OrderReview from "./Compo/OrderReview/OrderReview";
+import "./Dashboard.css";
 
 const Dashboard = () => {
   let { path, url } = useRouteMatch();
@@ -37,35 +38,51 @@ const Dashboard = () => {
     <>
       <section>
         <DashboardNav url={url} />
-        <div className="order-container border-b border-t">
+        <div className="dashboard-container border-b border-t">
           <div className="bg-gray-100 font-sans leading-normal tracking-normal">
             <div className="flex md:flex-row-reverse flex-wrap">
               <div className="w-full md:w-4/5 bg-gray-100">
                 <div className="container bg-gray-100 py-14 px-6 mx-auto">
                   <Switch>
-                    <Route exact path={`${path}`} component={DashboardBanner} />
-                    <Route path={`${path}/myOrders`} component={MyOrders} />
-                    <Route
-                      path={`${path}/orderReview`}
-                      component={OrderReview}
-                    />
-                    <Route path={`${path}/checkout`} component={Checkout} />
-                    <AdminRoute path={`${path}/manageOrders`}>
-                      <ManageOrders />
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/manageProducts`}>
-                      <ManageProducts />
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/addProduct`}>
-                      <AddProduct />
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/makeAdmin`}>
-                      <MakeAdmin />
-                    </AdminRoute>
+                    {!isAdmin ? (
+                      <>
+                        <Route
+                          exact
+                          path={`${path}`}
+                          component={DashboardBanner}
+                        />
+                        <Route path={`${path}/myOrders`} component={MyOrders} />
+                        <Route
+                          path={`${path}/orderReview`}
+                          component={OrderReview}
+                        />
+                        <Route path={`${path}/checkout`} component={Checkout} />
+                      </>
+                    ) : (
+                      <>
+                        <Route
+                          exact
+                          path={`${path}`}
+                          component={DashboardBanner}
+                        />
+                        <AdminRoute path={`${path}/manageOrders`}>
+                          <ManageOrders />
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/manageProducts`}>
+                          <ManageProducts />
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/addProduct`}>
+                          <AddProduct />
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/makeAdmin`}>
+                          <MakeAdmin />
+                        </AdminRoute>
+                      </>
+                    )}
                   </Switch>
                 </div>
               </div>
-              <div className="w-full hidden sm:block md:w-1/5 bg-gray-900 md:bg-gray-900 px-2 text-center md:pt-8 md:left-0 absolute lg:relative ">
+              <div className="w-full dashboard-sidebar hidden sm:block md:w-1/5 bg-gray-900 md:bg-gray-900 relative px-2 text-center md:pt-8 md:left-0 absolute lg:relative ">
                 <div className=" mx-auto lg:float-right lg:px-10">
                   <ul className="list-reset flex flex-row md:flex-col text-center md:text-left">
                     {!isAdmin ? (
@@ -176,7 +193,7 @@ const Dashboard = () => {
                         </li>
                       </>
                     )}
-                    <li className="flex-1 mt-24 mb-4">
+                    <li className="flex-1 mt-24 mb-4 absolute bottom-8 left-16">
                       <Link
                         to="/login"
                         onClick={logOut}
