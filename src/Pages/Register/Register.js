@@ -132,7 +132,7 @@ const Register = () => {
             <div className="text-center">
               <button
                 onClick={() => signInGoogle(from, history)}
-                className="px-4 py-2 border flex items-center justify-center mx-auto my-6"
+                className="px-4 py-2 border border-black flex items-center justify-center mx-auto my-6"
               >
                 <FontAwesomeIcon icon={faGoogle} size="2x" />
                 &nbsp; Sign In With Google
@@ -141,7 +141,7 @@ const Register = () => {
             <div>
               <h4>
                 Already have an account?{" "}
-                <Link to="/login" className="text-yellow-400 font-semibold">
+                <Link to="/login" className="text-red-400 font-semibold">
                   Just log in
                 </Link>
               </h4>

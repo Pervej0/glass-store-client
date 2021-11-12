@@ -45,7 +45,7 @@ const Footer = () => {
             </i>
           </div>
         </div>
-        <div className="col-span-2 flex flex-wrap items-center md:justify-around justify-between">
+        <div className="col-span-2 flex flex-wrap items-baseline md:justify-around justify-between">
           <div>
             <h4 className="mb-4 text-xl font-semibold text-white">
               Categories

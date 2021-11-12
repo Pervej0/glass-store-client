@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../Shared/Footer/Footer";
 import NavigationBar from "../Shared/NavigationBar/NavigationBar";
 import ContactForm from "./Compo/ContactForm";
 import ContactInfo from "./Compo/ContactInfo";
@@ -19,6 +20,7 @@ const ContactUs = () => {
       </section>
       <ContactInfo />
       <ContactForm />
+      <Footer />
     </>
   );
 };

@@ -93,7 +93,7 @@ const Login = () => {
                 <button
                   type="button"
                   onClick={() => signInGoogle(from, history)}
-                  className="px-4 py-2 border flex items-center justify-center mx-auto my-6"
+                  className="px-4 py-2 border border-black flex items-center justify-center mx-auto my-6"
                 >
                   <FontAwesomeIcon icon={faGoogle} size="2x" />
                   &nbsp; Sign In With Google
