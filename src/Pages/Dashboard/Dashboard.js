@@ -25,6 +25,7 @@ import DashboardBanner from "./Compo/DashboardBanner";
 import DashboardNav from "./Compo/DashboardNav";
 import MakeAdmin from "./Compo/MakeAddmin/MakeAdmin";
 import ManageOrders from "./Compo/ManageOrders/ManageOrders";
+import ManageProducts from "./Compo/ManageProducts/ManageProducts";
 import MyOrders from "./Compo/MyOrders/MyOrders";
 import OrderReview from "./Compo/OrderReview/OrderReview";
 
@@ -51,6 +52,9 @@ const Dashboard = () => {
                     <Route path={`${path}/checkout`} component={Checkout} />
                     <AdminRoute path={`${path}/manageOrders`}>
                       <ManageOrders />
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageProducts`}>
+                      <ManageProducts />
                     </AdminRoute>
                     <AdminRoute path={`${path}/addProduct`}>
                       <AddProduct />
@@ -118,6 +122,19 @@ const Dashboard = () => {
                             Admin panel
                           </h2>
                         </Link>
+                        <li className="mr-3 flex-1 flex items-baseline">
+                          <FontAwesomeIcon
+                            className="text-white mr-2"
+                            icon={faShoppingBasket}
+                            size="1x"
+                          />
+                          <Link
+                            className="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-gray-400"
+                            to={`${url}/manageProducts`}
+                          >
+                            Manage Products
+                          </Link>
+                        </li>
                         <li className="mr-3 flex-1 flex items-baseline">
                           <FontAwesomeIcon
                             className="text-white mr-2"

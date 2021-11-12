@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import "./Navbar.css";
-import "./NavbarQuery";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -9,6 +7,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
+import "./Navbar.css";
+import "./NavbarQuery";
 
 const NavigationBar = () => {
   const { user, logOut } = useAuth();
@@ -27,7 +27,7 @@ const NavigationBar = () => {
           to="/"
           className="p-2 mr-4 inline-flex items-center brand-name"
         >
-          <span className="text-3xl text-black italic font-bold tracking-wide">
+          <span className="md:text-3xl text-xl text-black italic font-bold tracking-wide">
             &nbsp;Glass Shop
           </span>
         </NavLink>

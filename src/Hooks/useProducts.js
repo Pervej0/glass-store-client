@@ -12,7 +12,7 @@ const useProducts = () => {
         setIsLoaded(false);
       });
   }, []);
-  return [products, isLoaded];
+  return [products, isLoaded, setProducts];
 };
 
 export default useProducts;

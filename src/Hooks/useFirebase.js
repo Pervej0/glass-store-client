@@ -130,7 +130,6 @@ const useFirebase = () => {
     fetch(`https://guarded-oasis-87785.herokuapp.com/admin/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setIsAdmin(data.admin);
       });
   }, [user]);
