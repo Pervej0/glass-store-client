@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 const Product = ({ product }) => {
   const { name, img, description, price, _id } = product;
   return (
-    <div className="border">
-      <div>
+    <div className="border product-item">
+      <div className="product-img">
         <img className="w-full" src={img} alt="" />
       </div>
       <div className="px-3 py-4">

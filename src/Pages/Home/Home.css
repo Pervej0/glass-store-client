@@ -57,3 +57,20 @@
     padding: 0 10px !important;
   }
 }
+.product-item .product-img {
+  position: relative;
+}
+
+.product-item .product-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  background-color: rgba(8, 8, 8, 0.56);
+  width: 0;
+  height: 100%;
+  transition: 0.2s all ease-in-out;
+}
+
+.product-item .product-img:hover::after {
+  width: 100%;
+}

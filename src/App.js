@@ -12,6 +12,7 @@ import MyOrders from "./Pages/Dashboard/Compo/MyOrders/MyOrders";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Checkout from "./Pages/Dashboard/Compo/Checkout/Checkout";
 import NotFound from "./Pages/NotFound/NotFound";
+import ContactUs from "./Pages/ContactUs/ContactUs";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <PrivateRoute path="/checkout">
               <Checkout />
             </PrivateRoute>
+            <Route path="/contact" component={ContactUs} />
             <Route path="/login" component={Login}></Route>
             <Route path="/register" component={Register}></Route>
             <Route path="*" component={NotFound}></Route>
