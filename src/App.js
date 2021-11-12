@@ -4,7 +4,6 @@ import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import AuthProvider from "./Context/AuthProvider";
-import Footer from "./Pages/Shared/Footer/Footer";
 import Shop from "./Pages/Shop/Shop";
 import PlaceOrder from "./Pages/Shop/Compo/Products/Compo/PlaceOrder";
 import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
@@ -28,21 +27,14 @@ function App() {
             <PrivateRoute path="/product/:id">
               <PlaceOrder />
             </PrivateRoute>
-            <PrivateRoute path="/myOrders">
-              <MyOrders />
-            </PrivateRoute>
             <PrivateRoute path="/dashboard">
               <Dashboard />
-            </PrivateRoute>
-            <PrivateRoute path="/checkout">
-              <Checkout />
             </PrivateRoute>
             <Route path="/contact" component={ContactUs} />
             <Route path="/login" component={Login}></Route>
             <Route path="/register" component={Register}></Route>
             <Route path="*" component={NotFound}></Route>
           </Switch>
-          <Footer />
         </Router>
       </AuthProvider>
     </div>

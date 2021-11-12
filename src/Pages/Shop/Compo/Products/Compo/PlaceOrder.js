@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router";
+import Footer from "../../../../Shared/Footer/Footer";
 import NavigationBar from "../../../../Shared/NavigationBar/NavigationBar";
 import OrderForm from "./OrderForm";
 
@@ -36,6 +37,7 @@ const PlaceOrder = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

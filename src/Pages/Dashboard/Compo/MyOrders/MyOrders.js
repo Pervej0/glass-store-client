@@ -37,41 +37,43 @@ const MyOrders = () => {
   };
 
   return (
-    <section className="md:px-14 p-3">
-      {!isSuccess ? (
-        <Spinner />
-      ) : (
-        <div className="flex flex-col order-table">
-          <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-              <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                <table className="w-full">
-                  <thead>
-                    <tr className="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
-                      <th className="px-4 py-3">S/N</th>
-                      <th className="px-4 py-3">Product Title</th>
-                      <th className="px-4 py-3">images</th>
-                      <th className="px-4 py-3">Status</th>
-                      <th className="px-4 py-3">action</th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white">
-                    {orders.map((item, index) => (
-                      <Order
-                        key={item._id}
-                        order={item}
-                        serial={index + 1}
-                        handleRemove={handleRemove}
-                      />
-                    ))}
-                  </tbody>
-                </table>
+    <>
+      <section className="md:px-14 p-3">
+        {!isSuccess ? (
+          <Spinner />
+        ) : (
+          <div className="flex flex-col order-table">
+            <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+                        <th className="px-4 py-3">S/N</th>
+                        <th className="px-4 py-3">Product Title</th>
+                        <th className="px-4 py-3">images</th>
+                        <th className="px-4 py-3">Status</th>
+                        <th className="px-4 py-3">action</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white">
+                      {orders.map((item, index) => (
+                        <Order
+                          key={item._id}
+                          order={item}
+                          serial={index + 1}
+                          handleRemove={handleRemove}
+                        />
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
-    </section>
+        )}
+      </section>
+    </>
   );
 };
 
