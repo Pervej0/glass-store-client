@@ -11,6 +11,7 @@ import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 import MyOrders from "./Pages/Dashboard/Compo/MyOrders/MyOrders";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Checkout from "./Pages/Dashboard/Compo/Checkout/Checkout";
+import NotFound from "./Pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             </PrivateRoute>
             <Route path="/login" component={Login}></Route>
             <Route path="/register" component={Register}></Route>
+            <Route path="*" component={NotFound}></Route>
           </Switch>
           <Footer />
         </Router>

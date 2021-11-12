@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useProducts from "../../../Hooks/useProducts";
 import Product from "../../Shop/Compo/Products/Compo/Product";
 
@@ -17,9 +18,11 @@ const HomeProducts = () => {
           ))}
         </div>
         <div className="text-center mt-16">
-          <button className="inline-block py-2 px-5 transition duration-500 ease-in-out bg-gray-700 rounded hover:bg-black border hover:border-white text-white uppercase">
-            Load More
-          </button>
+          <Link to="/shop">
+            <button className="inline-block py-2 px-5 transition duration-500 ease-in-out bg-gray-700 rounded hover:bg-black border hover:border-white text-white uppercase">
+              Load More
+            </button>
+          </Link>
         </div>
       </div>
     </section>
