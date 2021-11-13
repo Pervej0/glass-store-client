@@ -5,19 +5,29 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import {
+  faArrowAltCircleUp,
   faChevronCircleUp,
   faChevronUp,
   faEnvelope,
+  faLongArrowAltUp,
   faPhoneVolume,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./Footer.css";
 import PaymentBrand from "../../../images/brand/pay-with_1.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white md:p-12 py-10 px-4 font-serif">
+    <footer className="bg-gray-900 p-0 text-white md:p-12 px-4 font-serif">
+      <div className="fixed bottom-0 right-14">
+        <a href="#">
+          <button className="px-4 py-3 bg-red-600">
+            <FontAwesomeIcon icon={faLongArrowAltUp} size="1x" />
+          </button>
+        </a>
+      </div>
       <div className="grid gap-10 md:grid-cols-4 sm:grid-cols-2 grid-cols-1 justify-between md:px-4 md:gap-6 items-baseline pb-10">
         <div>
           <h4 className="mb-4 text-xl font-semibold text-white">Find us</h4>
