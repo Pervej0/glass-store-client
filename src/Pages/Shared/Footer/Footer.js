@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-gray-900 p-0 text-white md:p-12 px-4 font-serif">
-      <div className="fixed bottom-0 right-14">
+      <div className="fixed bottom-0 sm:right-14 right-2">
         <a href="#">
           <button className="px-4 py-3 bg-red-600">
             <FontAwesomeIcon icon={faLongArrowAltUp} size="1x" />
