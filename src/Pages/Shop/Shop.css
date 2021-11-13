@@ -1,6 +1,10 @@
 .shop-banner {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
     url(https://i.ibb.co/MNkvDM0/photo-1483181994834-aba9fd1e251a-ixid-Mnwx-Mj-A3f-DB8-MHxwa-G90by1w-YWdlf-Hx8f-GVuf-DB8f-Hx8-ixlib-r.jpg);
-  background-position: center center;
+  background-position: center;
   background-size: cover;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

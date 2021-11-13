@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import useFirebase from "../../Hooks/useFirebase";
 import { useHistory, useLocation } from "react-router";
 import NavigationBar from "../Shared/NavigationBar/NavigationBar";
+import Footer from "../Shared/Footer/Footer";
 
 const Login = () => {
   const [userInfo, setUserInfo] = useState({
@@ -15,7 +16,7 @@ const Login = () => {
   const { signInGoogle, manuallySignIn } = useFirebase();
   const history = useHistory();
   const location = useLocation();
-  let { from } = location.state || { from: { pathname: "/" } };
+  let { from } = location.state || { from: { pathname: "/dashboard" } };
 
   const handleUserInput = (e) => {
     const { name, value } = e.target;
@@ -41,7 +42,9 @@ const Login = () => {
 
   return (
     <>
-      <NavigationBar />
+      <header className="bg-white navLink-color">
+        <NavigationBar />
+      </header>
       <section className="md:px-14 p-3">
         <div className="p-6 my-8 grid md:grid-cols-2 grid-cols-1 gap-10">
           <div>
@@ -122,6 +125,7 @@ const Login = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

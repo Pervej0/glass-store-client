@@ -8,7 +8,9 @@ import "./Shop.css";
 const Shop = () => {
   return (
     <>
-      <NavigationBar />
+      <header className="bg-white navLink-color">
+        <NavigationBar />
+      </header>
       <ShopBanner />
       <Products />
       <Footer />

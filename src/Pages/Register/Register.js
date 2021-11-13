@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import { useHistory, useLocation } from "react-router";
 import NavigationBar from "../Shared/NavigationBar/NavigationBar";
+import Footer from "../Shared/Footer/Footer";
 
 const Register = () => {
   const [userError, setUserError] = useState("");
@@ -57,7 +58,9 @@ const Register = () => {
 
   return (
     <>
-      <NavigationBar />
+      <header className="bg-white navLink-color">
+        <NavigationBar />
+      </header>
       <section className="md:px-14 p-3">
         <div className="w-2/4 mx-auto border p-10">
           <div className="mb-8">
@@ -149,6 +152,7 @@ const Register = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

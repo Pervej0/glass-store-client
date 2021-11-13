@@ -10,7 +10,9 @@ import "./Home.css";
 const Home = () => {
   return (
     <>
-      <NavigationBar />
+      <header className="fixed w-full z-10 homepage-header">
+        <NavigationBar />
+      </header>
       <HomeBanner />
       <Categories />
       <HomeProducts />

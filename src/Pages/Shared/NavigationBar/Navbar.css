@@ -13,7 +13,11 @@
 
 .active {
   font-weight: 500;
-  color: rgb(105, 33, 33);
+  color: rgb(236, 72, 72);
+}
+
+.navLink-color nav a span {
+  color: #000;
 }
 
 header nav .user-profile {
