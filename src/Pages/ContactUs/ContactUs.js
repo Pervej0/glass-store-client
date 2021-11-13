@@ -7,9 +7,6 @@ import ContactInfo from "./Compo/ContactInfo";
 const ContactUs = () => {
   return (
     <>
-      <header className="bg-white navLink-color">
-        <NavigationBar />
-      </header>
       <section className="md:px-14 p-3 text-center my-4">
         <h4 className="text-2xl text-black font-bold mb-2 uppercase">
           Contact Us
@@ -22,7 +19,6 @@ const ContactUs = () => {
       </section>
       <ContactInfo />
       <ContactForm />
-      <Footer />
     </>
   );
 };

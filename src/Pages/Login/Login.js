@@ -42,9 +42,6 @@ const Login = () => {
 
   return (
     <>
-      <header className="bg-white navLink-color">
-        <NavigationBar />
-      </header>
       <section className="md:px-14 p-3">
         <div className="p-6 my-8 grid md:grid-cols-2 grid-cols-1 gap-10">
           <div>
@@ -125,7 +122,6 @@ const Login = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

@@ -16,11 +16,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./Footer.css";
 import PaymentBrand from "../../../images/brand/pay-with_1.png";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 p-0 text-white md:p-12 px-4 font-serif">
+    <footer className="bg-gray-900 py-14 text-white md:p-12 px-4 font-serif">
       <div className="fixed bottom-0 sm:right-14 right-2">
         <a href="#">
           <button className="px-4 py-3 bg-red-600">

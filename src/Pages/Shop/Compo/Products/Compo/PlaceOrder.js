@@ -18,7 +18,6 @@ const PlaceOrder = () => {
 
   return (
     <>
-      <NavigationBar />
       <section className="md:px-14 p-3">
         <div className="grid gap-6 md:grid-cols-3 grid-cols-1">
           <div className="my-4">
@@ -37,7 +36,6 @@ const PlaceOrder = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

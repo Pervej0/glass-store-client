@@ -214,7 +214,6 @@ const Dashboard = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

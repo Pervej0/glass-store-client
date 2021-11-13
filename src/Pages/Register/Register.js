@@ -58,9 +58,6 @@ const Register = () => {
 
   return (
     <>
-      <header className="bg-white navLink-color">
-        <NavigationBar />
-      </header>
       <section className="md:px-14 p-3">
         <div className="w-2/4 mx-auto border p-10">
           <div className="mb-8">
@@ -152,7 +149,6 @@ const Register = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

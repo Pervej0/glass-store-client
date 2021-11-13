@@ -8,12 +8,8 @@ import "./Shop.css";
 const Shop = () => {
   return (
     <>
-      <header className="bg-white navLink-color">
-        <NavigationBar />
-      </header>
       <ShopBanner />
       <Products />
-      <Footer />
     </>
   );
 };

@@ -7,11 +7,11 @@ import AuthProvider from "./Context/AuthProvider";
 import Shop from "./Pages/Shop/Shop";
 import PlaceOrder from "./Pages/Shop/Compo/Products/Compo/PlaceOrder";
 import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
-import MyOrders from "./Pages/Dashboard/Compo/MyOrders/MyOrders";
 import Dashboard from "./Pages/Dashboard/Dashboard";
-import Checkout from "./Pages/Dashboard/Compo/Checkout/Checkout";
 import NotFound from "./Pages/NotFound/NotFound";
 import ContactUs from "./Pages/ContactUs/ContactUs";
+import NavigationBar from "./Pages/Shared/NavigationBar/NavigationBar";
+import Footer from "./Pages/Shared/Footer/Footer";
 
 function App() {
   return (
@@ -19,18 +19,45 @@ function App() {
       <AuthProvider>
         <Router>
           <Switch>
-            <Route exact path="/" component={Home}></Route>
-            <Route path="/home" component={Home}></Route>
-            <Route path="/shop" component={Shop}></Route>
+            <Route exact path="/">
+              <NavigationBar />
+              <Home />
+              <Footer />
+            </Route>
+            <Route path="/home">
+              <NavigationBar />
+              <Home />
+              <Footer />
+            </Route>
+            <Route path="/shop">
+              <NavigationBar />
+              <Shop />
+              <Footer />
+            </Route>
             <PrivateRoute path="/product/:id">
+              <NavigationBar />
               <PlaceOrder />
+              <Footer />
             </PrivateRoute>
             <PrivateRoute path="/dashboard">
               <Dashboard />
+              <Footer />
             </PrivateRoute>
-            <Route path="/contact" component={ContactUs} />
-            <Route path="/login" component={Login}></Route>
-            <Route path="/register" component={Register}></Route>
+            <Route path="/contact">
+              <NavigationBar />
+              <ContactUs />
+              <Footer />
+            </Route>
+            <Route path="/login">
+              <NavigationBar />
+              <Login />
+              <Footer />
+            </Route>
+            <Route path="/register">
+              <NavigationBar />
+              <Register />
+              <Footer />
+            </Route>
             <Route path="*" component={NotFound}></Route>
           </Switch>
         </Router>

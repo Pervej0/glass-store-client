@@ -16,18 +16,11 @@
   color: rgb(236, 72, 72);
 }
 
-.navLink-color nav a span {
-  color: #000;
-}
-
-.navLink-color .responsive-bars {
-  color: rgb(211, 31, 31);
-}
-
 header nav .user-profile {
   position: relative;
   right: 0px;
   top: 0px;
+  z-index: 1;
 }
 
 #show {
