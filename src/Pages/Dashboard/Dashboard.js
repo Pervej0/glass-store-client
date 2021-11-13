@@ -83,7 +83,7 @@ const Dashboard = () => {
                 </div>
               </div>
               <div className="w-full dashboard-sidebar hidden sm:block md:w-1/5 bg-gray-900 md:bg-gray-900 relative px-2 text-center md:pt-8 md:left-0 absolute lg:relative ">
-                <div className=" mx-auto lg:float-right lg:px-10">
+                <div className="mx-auto lg:float-right lg:px-10">
                   <ul className="list-reset flex flex-row md:flex-col text-center md:text-left">
                     {!isAdmin ? (
                       <>

@@ -140,7 +140,7 @@ const Register = () => {
             </div>
             <div>
               <h4>
-                Already have an account?{" "}
+                Already have an account?&nbsp;
                 <Link to="/login" className="text-red-400 font-semibold">
                   Just log in
                 </Link>
