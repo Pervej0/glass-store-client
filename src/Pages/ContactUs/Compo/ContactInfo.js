@@ -3,7 +3,7 @@ import React from "react";
 const ContactInfo = () => {
   return (
     <section className="md:px-14 p-3">
-      <div className="grid sm:grid-cols-2 gap-5 my-8 items-baseline md:grid-cols-3 grid-cols-1">
+      <div className="grid sm:grid-cols-2 gap-5 my-2 items-baseline md:grid-cols-3 grid-cols-1">
         <div className="border px-5">
           <div className="my-3 my-4">
             <span className="text-black font-bold text-sm">Phone:</span>
