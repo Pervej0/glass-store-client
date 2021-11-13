@@ -3,7 +3,7 @@ import React from "react";
 const Categories = () => {
   return (
     <section className="md:px-14 p-3 my-14">
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-5 grid-cols-1">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:gap-5 gap-x-0 gap-y-5  grid-cols-1">
         <div className="categories-item">
           <div className="relative text-center categories-box mb-4">
             <div>
@@ -34,7 +34,7 @@ const Categories = () => {
             </div>
           </div>
         </div>
-        <div className="categories-item col-span-2">
+        <div className="categories-item md:col-span-2 cols-span-1">
           <div className="relative text-center categories-box">
             <div>
               <img

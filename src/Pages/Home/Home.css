@@ -1,9 +1,11 @@
 .categories-item .categories-box {
   overflow: hidden;
+  width: 100%;
 }
 
 .categories-item .categories-box img {
   object-fit: cover;
+  width: 100%;
   transition: 0.4s all ease-in-out;
 }
 

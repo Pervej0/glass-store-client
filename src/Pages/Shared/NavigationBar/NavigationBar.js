@@ -29,7 +29,7 @@ const NavigationBar = () => {
       </NavLink>
 
       <button
-        className="md:text-white text-red-700 inline-flex p-3 rounded lg:hidden ml-auto hover:text-red-600 leading-4	 font-semibold outline-none nav-toggler"
+        className="md:text-white inline-flex p-3 rounded lg:hidden ml-auto hover:text-red-600 leading-4	 font-semibold outline-none nav-toggler"
         data-target="#navigation"
       >
         <FontAwesomeIcon icon={faBars} size="lg" />

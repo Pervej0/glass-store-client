@@ -20,6 +20,10 @@
   color: #000;
 }
 
+.navLink-color .responsive-bars {
+  color: rgb(211, 31, 31);
+}
+
 header nav .user-profile {
   position: relative;
   right: 0px;
