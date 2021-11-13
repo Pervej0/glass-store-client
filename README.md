@@ -11,7 +11,7 @@ visit our site to see more : (https://niche-products.firebaseapp.com/)
 
 ## Features
 
-- This site UI is build up with html/css/tailwind(css framwork) and others packages.
+- This site UI is build up with html/css/tailwind(css framwork)/react/Jquery and others packages.
 
 - For authentication we use firebase. So user can create account or sign up with google account.
 
