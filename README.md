@@ -24,3 +24,7 @@ visit our site to see more : (https://niche-products.firebaseapp.com/)
 - For admin access has a different dashboar call "Admin Panel".
 
 - From "Admin panel" an admin can make other admin. Which gives him power to manage orders and products.
+
+## Admin access
+
+To get access admin panel user (admin@admin.com/123456)

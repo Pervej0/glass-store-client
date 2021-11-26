@@ -26,7 +26,7 @@ function App() {
             </Route>
             <Route path="/home">
               <NavigationBar />
-              <Home />
+              <Home/>
               <Footer />
             </Route>
             <Route path="/shop">
