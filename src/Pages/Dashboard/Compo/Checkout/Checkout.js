@@ -47,7 +47,7 @@ const Checkout = () => {
                 <h5 className="text-gray-700 font-semibold mt-3">
                   {item.productTitle}
                 </h5>
-                <h6>price: {item.price}</h6>
+                <h6>price: ${item.price}</h6>
               </div>
             ))}
           </div>
@@ -83,13 +83,6 @@ const Checkout = () => {
                   </tr>
                 </tbody>
               </table>
-              {/*  <button
-                // onClick={handlePayment}
-                type="button"
-                className="bg-green-600 px-4 py-2 font-semibold text-white"
-              >
-                Pay
-              </button> */}
             </div>
           </div>
         </>
