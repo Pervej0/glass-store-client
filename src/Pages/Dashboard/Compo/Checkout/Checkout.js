@@ -52,7 +52,7 @@ const Checkout = () => {
             ))}
           </div>
           <div>
-            <h3 className="text-xl mt-3">
+            <h3 className="text-xl mt-3 text-sm font-serif">
               You have total {orderedItem?.length} prodcts to buy
             </h3>
           </div>
