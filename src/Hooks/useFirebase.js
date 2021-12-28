@@ -133,7 +133,6 @@ const useFirebase = () => {
         setIsAdmin(data.admin);
       });
   }, [user]);
-
   return {
     isLoading,
     isAdmin,

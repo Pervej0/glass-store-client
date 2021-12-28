@@ -9,16 +9,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-} from "react-router-dom";
+import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import AdminRoute from "../AdminRoute/AdminRoute";
-import Footer from "../Shared/Footer/Footer";
 import AddProduct from "./Compo/AddProduct/AddProduct";
 import Checkout from "./Compo/Checkout/Checkout";
 import DashboardBanner from "./Compo/DashboardBanner";
@@ -56,7 +49,9 @@ const Dashboard = () => {
                           path={`${path}/orderReview`}
                           component={OrderReview}
                         />
-                        <Route path={`${path}/checkout`} component={Checkout} />
+                        <Route path={`${path}/checkout`}>
+                          <Checkout />
+                        </Route>
                       </>
                     ) : (
                       <>

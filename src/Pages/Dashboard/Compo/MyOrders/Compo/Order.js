@@ -2,7 +2,7 @@ import React from "react";
 
 const Order = ({ order, handleRemove, serial }) => {
   const { status, img, productTitle, _id } = order;
-  console.log(order);
+
   return (
     <tr className="text-gray-700">
       <td className="px-4 py-3 border capitalize">{serial}</td>

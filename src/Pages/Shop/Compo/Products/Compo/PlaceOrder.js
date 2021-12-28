@@ -15,7 +15,7 @@ const PlaceOrder = () => {
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);
-
+  console.log(product);
   return (
     <>
       <section className="md:px-14 p-3">

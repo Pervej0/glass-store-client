@@ -1,18 +1,21 @@
 import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import useAuth from "../../../../../Hooks/useAuth";
 
 const OrderForm = ({ product }) => {
   const { register, handleSubmit, watch, reset } = useForm();
   const { user } = useAuth();
   const [isSuccess, setIsSuccess] = useState(false);
-
+  const [isOrdered, setIsOrdered] = useState(false);
+  console.log(isSuccess);
   const onSubmit = (data) => {
     data.img = product.img;
     data.price = product.price;
     data.status = "pending";
     data.productTitle = product.name;
+
     if (!isSuccess) {
       fetch("https://guarded-oasis-87785.herokuapp.com/orders", {
         method: "POST",
@@ -23,6 +26,7 @@ const OrderForm = ({ product }) => {
         .then((result) => {
           if (result.acknowledged) {
             setIsSuccess(true);
+            setIsOrdered(true);
             reset();
           }
         });
@@ -36,7 +40,16 @@ const OrderForm = ({ product }) => {
   console.log(watch("example"));
   return (
     <div>
-      {/* alert field */}
+      {isOrdered && (
+        <div className="text-right mb-3">
+          <Link
+            to="/dashboard/checkout"
+            className="px-3 text-white font-semibold py-2 bg-green-500"
+          >
+            Let's chekout
+          </Link>
+        </div>
+      )}
       {isSuccess && (
         <div
           className="bg-gren-100 mb-2 border border-green-400 text-green-700 px-4 py-3 rounded relative"
@@ -46,7 +59,6 @@ const OrderForm = ({ product }) => {
           <span className="block sm:inline"> We received your order 👍</span>
         </div>
       )}
-
       <h6 className="text-xl text-black font-bold mb-4 uppercase">
         Receive your product
       </h6>

@@ -6,6 +6,7 @@ import useFirebase from "../../Hooks/useFirebase";
 import { useHistory, useLocation } from "react-router";
 import NavigationBar from "../Shared/NavigationBar/NavigationBar";
 import Footer from "../Shared/Footer/Footer";
+import useAuth from "../../Hooks/useAuth";
 
 const Login = () => {
   const [userInfo, setUserInfo] = useState({
@@ -13,7 +14,7 @@ const Login = () => {
     password: "",
   });
   const [userError, setUserError] = useState("");
-  const { signInGoogle, manuallySignIn } = useFirebase();
+  const { signInGoogle, manuallySignIn, error } = useAuth();
   const history = useHistory();
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/dashboard" } };
@@ -35,7 +36,7 @@ const Login = () => {
       setUserError("Please enter your password!");
       return;
     }
-    console.log(userInfo);
+
     manuallySignIn(userInfo.email, userInfo.password, from, history);
     setUserError("");
   };
@@ -46,6 +47,9 @@ const Login = () => {
         <div className="p-6 my-8 grid md:grid-cols-2 grid-cols-1 gap-10">
           <div>
             <div className="mb-8">
+              <h6 className="text-red-600 text-center mb-3 font-semibold">
+                {error}
+              </h6>
               <h6 className="text-xl text-black font-bold mb-4">
                 REGISTERED CUSTOMERS
               </h6>
@@ -85,6 +89,7 @@ const Login = () => {
             >
               Log in
             </button>
+
             <div className="text-center">
               <div className="text-black text-center my-4 text-lg">
                 ---------------- or ------------------
