@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
@@ -26,7 +26,7 @@ function App() {
             </Route>
             <Route path="/home">
               <NavigationBar />
-              <Home/>
+              <Home />
               <Footer />
             </Route>
             <Route path="/shop">

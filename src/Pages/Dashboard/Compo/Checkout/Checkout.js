@@ -1,6 +1,7 @@
 import { Elements, useStripe } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import useAuth from "../../../../Hooks/useAuth";
 import Spinner from "../../../Shared/Spinner/Spinner";
 import CheckoutForm from "./Compo/CheckoutForm";
@@ -41,50 +42,61 @@ const Checkout = () => {
         <Spinner />
       ) : (
         <>
-          <div>
-            {orderedItem.map((item) => (
-              <div key={item._id} className="py-1 border-b">
-                <h5 className="text-gray-700 font-semibold mt-3">
-                  {item.productTitle}
-                </h5>
-                <h6>price: ${item.price}</h6>
+          {totalCost === 0 ? (
+            <div className="text-center">
+              <h1 className="font-serif text-xl my-4">
+                You currently haven't any order to pay.
+              </h1>
+              <Link
+                to="/shop"
+                className="border-2 border-black px-4 py-1 uppercase font-semibold"
+              >
+                Visit store
+              </Link>
+            </div>
+          ) : (
+            <>
+              <div>
+                {orderedItem.map((item) => (
+                  <div key={item._id} className="py-1 border-b">
+                    <h5 className="text-gray-700 font-semibold mt-3">
+                      {item.productTitle}
+                    </h5>
+                    <h6>price: ${item.price}</h6>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <div>
-            <h3 className="text-xl mt-3 text-sm font-serif">
-              You have total {orderedItem?.length} prodcts to buy
-            </h3>
-          </div>
-          <div className="grid gap-10 grid-cols-3">
-            <div className="col-span-2 my-4">
-              <Elements stripe={stripePromise}>
-                <CheckoutForm paymentDetails={paymentDetails} />
-              </Elements>
-            </div>
-            <div className="p-3">
-              <table className="w-full mb-4">
-                <tbody>
-                  <tr className="border-b border-black">
-                    <td className="pb-3">Totall item:</td>
-                    <td>{orderedItem.length}</td>
-                  </tr>
-                  <tr className="border-b border-black">
-                    <td className="pb-3">Price:</td>
-                    <td>${productsPrice}</td>
-                  </tr>
-                  <tr className="border-b border-black">
-                    <td className="pb-3">Vat:</td>
-                    <td>${vatCost} or 10%</td>
-                  </tr>
-                  <tr className="border-b border-black">
-                    <td className="pb-3">Grand Total: </td>
-                    <td>${totalCost}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+              <div className="grid gap-10 grid-cols-3">
+                <div className="col-span-2 my-4">
+                  <Elements stripe={stripePromise}>
+                    <CheckoutForm paymentDetails={paymentDetails} />
+                  </Elements>
+                </div>
+                <div className="p-3">
+                  <table className="w-full mb-4">
+                    <tbody>
+                      <tr className="border-b border-black">
+                        <td className="pb-3">Totall item:</td>
+                        <td>{orderedItem.length}</td>
+                      </tr>
+                      <tr className="border-b border-black">
+                        <td className="pb-3">Price:</td>
+                        <td>${productsPrice}</td>
+                      </tr>
+                      <tr className="border-b border-black">
+                        <td className="pb-3">Vat:</td>
+                        <td>${vatCost} or 10%</td>
+                      </tr>
+                      <tr className="border-b border-black">
+                        <td className="pb-3">Grand Total: </td>
+                        <td>${totalCost}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </>
+          )}
         </>
       )}
     </section>
