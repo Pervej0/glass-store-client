@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
-import "./NavbarQuery";
+// import "./NavbarQuery";
 import "./Navbar.css";
 
 const NavigationBar = () => {

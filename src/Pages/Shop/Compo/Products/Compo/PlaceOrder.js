@@ -11,7 +11,7 @@ const PlaceOrder = () => {
 
   // load specific product
   useEffect(() => {
-    fetch(`https://guarded-oasis-87785.herokuapp.com/product/${id}`)
+    fetch(`https://glass-store-hhti.onrender.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, []);

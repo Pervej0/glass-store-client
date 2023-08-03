@@ -10,7 +10,7 @@ const ManageProducts = () => {
     console.log(id);
     const warning = window.confirm("Are you sure want to delete?");
     if (warning) {
-      fetch(`https://guarded-oasis-87785.herokuapp.com/products/${id}`, {
+      fetch(`https://glass-store-hhti.onrender.com/products/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

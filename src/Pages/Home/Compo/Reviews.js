@@ -42,7 +42,7 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("https://guarded-oasis-87785.herokuapp.com/reviews")
+    fetch("https://glass-store-hhti.onrender.com/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

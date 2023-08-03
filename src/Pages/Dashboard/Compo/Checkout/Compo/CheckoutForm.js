@@ -11,7 +11,7 @@ const CheckoutForm = ({ paymentDetails }) => {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch("https://guarded-oasis-87785.herokuapp.com/create-payment-intent", {
+    fetch("https://glass-store-hhti.onrender.com/create-payment-intent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

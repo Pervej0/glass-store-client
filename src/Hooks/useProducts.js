@@ -5,7 +5,7 @@ const useProducts = () => {
   const [isLoaded, setIsLoaded] = useState(true);
 
   useEffect(() => {
-    fetch("https://guarded-oasis-87785.herokuapp.com/products")
+    fetch("https://glass-store-hhti.onrender.com/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

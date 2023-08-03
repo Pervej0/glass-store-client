@@ -15,9 +15,10 @@ const Checkout = () => {
   const [IsSuccess, setIsSuccess] = useState(false);
 
   useEffect(() => {
-    fetch(`https://guarded-oasis-87785.herokuapp.com/orders/${user?.email}`)
+    fetch(`https://glass-store-hhti.onrender.com/orders/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data, "emailllllllllll");
         setOrderedItem(data);
         setIsSuccess(true);
       });

@@ -7,7 +7,7 @@ const AddProduct = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    fetch("https://guarded-oasis-87785.herokuapp.com/products", {
+    fetch("https://glass-store-hhti.onrender.com/products", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

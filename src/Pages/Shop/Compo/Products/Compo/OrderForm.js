@@ -17,7 +17,7 @@ const OrderForm = ({ product }) => {
     data.productTitle = product.name;
 
     if (!isSuccess) {
-      fetch("https://guarded-oasis-87785.herokuapp.com/orders", {
+      fetch("https://glass-store-hhti.onrender.com/orders", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(data),

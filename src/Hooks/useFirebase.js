@@ -115,7 +115,7 @@ const useFirebase = () => {
   const saveToUser = (displayName, email, method) => {
     const user = { displayName, email };
     console.log(user);
-    fetch("https://guarded-oasis-87785.herokuapp.com/user", {
+    fetch("https://glass-store-hhti.onrender.com/user", {
       method: method,
       headers: { "content-type": "application/json" },
       body: JSON.stringify(user),
@@ -127,7 +127,7 @@ const useFirebase = () => {
 
   // check user admin or not
   useEffect(() => {
-    fetch(`https://guarded-oasis-87785.herokuapp.com/admin/${user?.email}`)
+    fetch(`https://glass-store-hhti.onrender.com/admin/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setIsAdmin(data.admin);
